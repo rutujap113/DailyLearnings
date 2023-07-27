@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
 <scenario name="UAC1 with SendCmd data">
-  <!-- send the first INVITE -->
+  <!-- send the first INVITE
+  Record-Route: <sip:[local_ip]:[local_port];lr>
+   -->
   <send retrans="500">
     <![CDATA[
       INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      Record-Route: <sip:[local_ip]:[local_port];lr>
       From: sipp A <sip:sipp@[local_ip]:[local_port]>;tag=[call_number]
       To: <sip:[service]@[remote_ip]:[remote_port];line=11594>
       Call-ID: [call_id]
